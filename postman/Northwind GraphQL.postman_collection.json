@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "Authenticate & get Access Token",
+			"name": "Auth: Get Bearer & Access Token",
 			"event": [
 				{
 					"listen": "test",
@@ -93,7 +93,7 @@
 				"body": {
 					"mode": "graphql",
 					"graphql": {
-						"query": "query {\n  orders(query: {shipCity:\"London\"}) {\n    _id\n    freight\n    orderDate\n    requiredDate\n    shipAddress\n    shipCity\n    shipCountry\n    shipName\n    shipPostalCode\n    shipRegion\n    shipVia\n    shippedDate\n    customer {\n        companyName\n        contactName\n        contactTitle\n    }\n    employee {\n        firstName\n        lastName\n    }    \n    orderDetails {\n        discount\n        productId\n        quantity\n        unitPrice\n        product {\n            categoryId\n            productName\n            quantityPerUnit\n      }\n    }\n  }\n}",
+						"query": "query {\n  orders(query: {shipCity:\"London\"}) {\n    _id\n    freight\n    orderDate\n    requiredDate\n    shipAddress\n    shipCity\n    shipCountry\n    shipName\n    shipPostalCode\n    shipRegion\n    shipVia\n    shippedDate\n    customer {\n        customerId\n        companyName\n        contactName\n        contactTitle\n    }\n    employee {\n        employeeId\n        firstName\n        lastName\n    }    \n    orderDetails {\n        discount\n        quantity\n        unitPrice\n        product {\n            productId\n            productName\n            quantityPerUnit\n      }\n    }\n  }\n}",
 						"variables": ""
 					}
 				},
@@ -130,8 +130,45 @@
 				"body": {
 					"mode": "graphql",
 					"graphql": {
-						"query": "query ordersByEmployee5($criteria: OrderQueryInput!) {\n  orders(query: $criteria) {\n    _id\n    freight\n    orderDate\n    requiredDate\n    shipAddress\n    shipCity\n    shipCountry\n    shipName\n    shipPostalCode\n    shipRegion\n    shipVia\n    shippedDate\n    customer {\n        companyName\n        contactName\n        contactTitle\n    }\n    employee {\n        firstName\n        lastName\n    }    \n    orderDetails {\n        discount\n        productId\n        quantity\n        unitPrice\n        product {\n            categoryId\n            productName\n            quantityPerUnit\n      }\n    }\n  }\n}",
-						"variables": "{\n  \"criteria\": {\n    \"shipCity\":\"London\",\n    \"employeeId\": 5\n  }\n}"
+						"query": "query ordersByEmployee5($criteria: OrderQueryInput!) {\n  orders(query: $criteria) {\n    _id\n    freight\n    orderDate\n    requiredDate\n    shipAddress\n    shipCity\n    shipCountry\n    shipName\n    shipPostalCode\n    shipRegion\n    shipVia\n    shippedDate\n    customer {\n        customerId\n        companyName\n        contactName\n        contactTitle\n    }\n    employee {\n        employeeId\n        firstName\n        lastName\n    }    \n    orderDetails {\n        discount\n        quantity\n        unitPrice\n        product {\n            productId\n            productName\n            quantityPerUnit\n      }\n    }\n  }\n}",
+						"variables": "{\n  \"criteria\": {\n    \"shipCity\":\"London\",\n    \"employee\" : {\n       \"employeeId\": 5\n    }\n  }\n}"
+					}
+				},
+				"url": {
+					"raw": "{{graphql_api}}",
+					"host": [
+						"{{graphql_api}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query: Orders shipped to London by Employee 1 to Customer EASTC",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query ordersByEmployee5($criteria: OrderQueryInput!) {\n  orders(query: $criteria) {\n     _id\n    freight\n    orderDate\n    requiredDate\n    shipAddress\n    shipCity\n    shipCountry\n    shipName\n    shipPostalCode\n    shipRegion\n    shipVia\n    shippedDate\n    customer {\n        customerId\n        companyName\n        contactName\n        contactTitle\n    }\n    employee {\n        employeeId\n        firstName\n        lastName\n    }    \n    orderDetails {\n        discount\n        quantity\n        unitPrice\n        product {\n            productId\n            productName\n            quantityPerUnit\n      }\n    }\n  }\n}",
+						"variables": "{\n  \"criteria\": {\n    \"shipCity\":\"London\",\n    \"employee\" : {\n       \"employeeId\": 1\n    },\n    \"customer\" : {\n        \"customerId\": \"EASTC\"\n    }\n  }\n}"
 					}
 				},
 				"url": {
