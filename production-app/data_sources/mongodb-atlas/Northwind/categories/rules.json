@@ -1,6 +1,6 @@
 {
     "collection": "categories",
-    "database": "Northwind",
+    "database": "northwind",
     "roles": [
         {
             "name": "readAll",

@@ -1,14 +1,14 @@
 {
     "collection": "products",
-    "database": "Northwind",
+    "database": "northwind",
     "roles": [
         {
-            "name": "readAndWriteAll",
+            "name": "readAll",
             "apply_when": {},
             "read": true,
-            "write": true,
-            "insert": true,
-            "delete": true,
+            "write": false,
+            "insert": false,
+            "delete": false,
             "search": true
         }
     ]

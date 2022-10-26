@@ -1,6 +1,6 @@
 {
     "collection": "employeeTerritories",
-    "database": "Northwind",
+    "database": "northwind",
     "roles": [
         {
             "name": "readAll",

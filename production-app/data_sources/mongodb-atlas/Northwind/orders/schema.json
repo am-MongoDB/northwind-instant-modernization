@@ -15,6 +15,9 @@
                 "contactTitle": {
                     "bsonType": "string"
                 },
+                "customerId": {
+                    "bsonType": "string"
+                },
                 "phone": {
                     "bsonType": "string"
                 }
@@ -26,8 +29,8 @@
         "employee": {
             "bsonType": "object",
             "properties": {
-                "extension": {
-                    "bsonType": "string"
+                "employeeId": {
+                    "bsonType": "int"
                 },
                 "firstName": {
                     "bsonType": "string"
@@ -64,6 +67,9 @@
                         "bsonType": "object",
                         "properties": {
                             "categoryId": {
+                                "bsonType": "int"
+                            },
+                            "productId": {
                                 "bsonType": "int"
                             },
                             "productName": {

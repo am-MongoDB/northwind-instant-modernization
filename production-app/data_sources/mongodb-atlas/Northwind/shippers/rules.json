@@ -1,6 +1,6 @@
 {
     "collection": "shippers",
-    "database": "Northwind",
+    "database": "northwind",
     "roles": [
         {
             "name": "readAll",

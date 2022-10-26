@@ -1,6 +1,6 @@
 {
     "collection": "usStates",
-    "database": "Northwind",
+    "database": "northwind",
     "roles": [
         {
             "name": "readAll",

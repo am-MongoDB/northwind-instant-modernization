@@ -1,6 +1,6 @@
 {
     "collection": "region",
-    "database": "Northwind",
+    "database": "northwind",
     "roles": [
         {
             "name": "readAll",

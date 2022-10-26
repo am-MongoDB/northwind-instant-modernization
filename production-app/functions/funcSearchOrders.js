@@ -1,6 +1,6 @@
 exports = async function(searchString) {
 
-  const orders = context.services.get('mongodb-atlas').db('Northwind').collection('orders');
+  const orders = context.services.get('mongodb-atlas').db('northwind').collection('orders');
   
   var pipeline = [
     // orders
