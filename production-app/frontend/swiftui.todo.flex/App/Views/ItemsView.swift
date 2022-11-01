@@ -7,7 +7,7 @@ struct ItemsView: View {
     // ObservedResults is a mutable collection; here it's
     // all of the Item objects in the realm.
     // You can append or delete todos directly from the collection.
-    @ObservedResults(Item.self) var item
+    @ObservedResults(order.self) var item
     @State var isInCreateItemView = false
     @State var itemSummary = ""
     @State var user: User

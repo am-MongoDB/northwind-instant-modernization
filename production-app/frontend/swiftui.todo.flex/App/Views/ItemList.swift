@@ -6,7 +6,7 @@ struct ItemList: View {
     // ObservedResults is a collection of all Item objects in the realm.
     // Deleting objects from the observed collection
     // deletes them from the realm.
-    @ObservedResults(Item.self) var items
+    @ObservedResults(order.self) var items
     
     var body: some View {
         VStack {
@@ -20,6 +20,6 @@ struct ItemList: View {
             Text("Log in with the same account on another device or simulator to see your list sync in real-time")
                 .frame(maxWidth: 300, alignment: .center)
         }
-        .navigationBarTitle("Items", displayMode: .inline)
+        .navigationBarTitle("Orders", displayMode: .inline)
     }
 }

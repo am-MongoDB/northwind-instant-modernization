@@ -21,5 +21,8 @@ func loadAppConfig() -> AppConfig {
     let realmPropertyList = try! PropertyListSerialization.propertyList(from: data, format: nil) as! [String: Any]
     let appId = realmPropertyList["appId"]! as! String
     let baseUrl = realmPropertyList["baseUrl"]! as! String
+    // Get on-disk location of the default Realm
+    let realm = try! Realm()
+    print("Realm is located at:", realm.configuration.fileURL!)
     return AppConfig(appId: appId, baseUrl: baseUrl)
 }
