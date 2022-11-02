@@ -5,7 +5,7 @@ import RealmSwift
 struct ItemDetail: View {
     // This property wrapper observes the Item object and
     // invalidates the view when the Item object changes.
-    @ObservedRealmObject var anOrder: order
+    @ObservedRealmObject var anOrder: order    
     
     var body: some View {
         Form {
