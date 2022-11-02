@@ -23,7 +23,7 @@ struct CreateItemView: View {
     
     @State var customerId = ""
     @State var employeeId = 0
-    @State var freight = 0
+    @State var freight = 0.00
     @State var orderDate = Date()
     @State var shipAddress = ""
     @State var shipCity = ""
@@ -73,11 +73,18 @@ struct CreateItemView: View {
                     // To avoid updating too many times and causing Sync-related
                     // performance issues, we only assign to the `newItem.summary`
                     // once when the user presses `Save`.
-                    newItem.customerId = customerId
                     newItem._id = lastOrderId
                     newItem._id += 1
-                    print("New Order ID: \(newItem._id)")
-                    print("Number of Realm Documents: \(items.count)")
+                    newItem.customerId = customerId
+                    newItem.employeeId = employeeId
+                    newItem.freight = freight
+                    newItem.orderDate = orderDate
+                    newItem.shipAddress = shipAddress
+                    newItem.shipCity = shipCity
+                    newItem.shipCountry = shipCountry
+                    newItem.shipPostalCode = shipPostalCode
+                    newItem.shipRegion = shipRegion
+                    newItem.shipVia = shipVia
                     
                     // Appending the new Item object to the ``items``
                     // ObservedResults collection adds it to the
