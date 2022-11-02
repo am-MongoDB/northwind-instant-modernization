@@ -1,26 +1,24 @@
 {
     "type": "flexible",
-    "state": "",
-    "development_mode_enabled": false,
+    "state": "enabled",
+    "development_mode_enabled": true,
     "service_name": "mongodb-atlas",
-    "database_name": "todo",
+    "database_name": "northwind",
+    "last_disabled": 1666844679,
+    "client_max_offline_days": 30,
+    "is_recovery_mode_disabled": false,
     "permissions": {
         "rules": {},
         "defaultRoles": [
             {
-                "name": "owner-read-write",
+                "name": "read-write",
                 "applyWhen": {},
-                "read": {
-                    "owner_id": "%%user.id"
-                },
-                "write": {
-                    "owner_id": "%%user.id"
-                }
+                "read": true,
+                "write": true
             }
         ]
     },
     "queryable_fields_names": [
-        "_id",
-        "owner_id"
+        "customerId"
     ]
 }
