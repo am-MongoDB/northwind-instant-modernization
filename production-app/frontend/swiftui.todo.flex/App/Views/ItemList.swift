@@ -8,18 +8,27 @@ struct ItemList: View {
     // deletes them from the realm.
     @ObservedResults(order.self) var items
     
-    var body: some View {
-        VStack {
-            List {
-                ForEach(items) { item in
-                    ItemRow(item: item)
-                }.onDelete(perform: $items.remove)
-            }
-            .listStyle(InsetListStyle())
-            Spacer()
-            Text("Log in with the same account on another device or simulator to see your list sync in real-time")
-                .frame(maxWidth: 300, alignment: .center)
+    @EnvironmentObject var orderSettings: OrderSettings
+    
+        var body: some View {
+    
+            VStack {
+                List {
+    
+                    ForEach(orderSettings.sortedItems) { item in
+                        ItemRow(item: item)
+                    }
+                    .onDelete(perform: $items.remove)
+                }
+                .listStyle(InsetListStyle())
+    
+                Spacer()
+                Text("Log in with the same account on another device or simulator to see your list sync in real-time")
+                    .frame(maxWidth: 300, alignment: .center)
+            }.environmentObject(orderSettings)
+            .navigationBarTitle("Orders", displayMode: .inline)
+    
         }
-        .navigationBarTitle("Orders", displayMode: .inline)
-    }
+    
+    
 }

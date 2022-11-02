@@ -18,16 +18,16 @@ struct CreateItemView: View {
     
     @State var user: User
     
-    @State var itemSummary = ""
+    @State var customerId = ""
 
     var body: some View {
         Form {
-            Section(header: Text("Order Name")) {
+            Section(header: Text("Customer ID")) {
                 // When using Atlas Device Sync, binding directly to the
                 // synced property can cause performance issues. Instead,
                 // we'll bind to a `@State` variable and then assign to the
                 // synced property when the user presses `Save`
-                TextField("New order", text: $itemSummary)
+                TextField("Customer ID", text: $customerId)
             }
             Section {
                 Button(action: {
@@ -35,7 +35,10 @@ struct CreateItemView: View {
                     // To avoid updating too many times and causing Sync-related
                     // performance issues, we only assign to the `newItem.summary`
                     // once when the user presses `Save`.
-                    newItem.shipName = itemSummary
+                    newItem.customerId = customerId
+                    
+//                    newItem._id = items.sorted(byKeyPath: "orderDate", ascending: false) .last!._id
+//                    newItem._id += 1
                     // Appending the new Item object to the ``items``
                     // ObservedResults collection adds it to the
                     // realm in an implicit write.

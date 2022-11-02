@@ -3,6 +3,7 @@ import RealmSwift
 
 /// Log in or register users using email/password authentication
 struct LoginView: View {
+    @EnvironmentObject var orderSettings: OrderSettings
     @State var email = ""
     @State var password = ""
     
@@ -50,7 +51,7 @@ struct LoginView: View {
             .background(Color.gray)
             .foregroundColor(.white)
             .clipShape(Capsule())
-        }
+        }.environmentObject(orderSettings)
     }
         
     /// Logs in with an existing user.
