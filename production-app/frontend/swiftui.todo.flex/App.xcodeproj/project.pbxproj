@@ -12,7 +12,6 @@
 		463C5368291044F2008F63E8 /* order_employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463C5367291044F2008F63E8 /* order_employee.swift */; };
 		463C536A29104507008F63E8 /* order_orderDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463C536929104507008F63E8 /* order_orderDetails.swift */; };
 		463C536C2910453B008F63E8 /* order_orderDetails_product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463C536B2910453B008F63E8 /* order_orderDetails_product.swift */; };
-		463C536E291186DE008F63E8 /* OrderSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463C536D291186DE008F63E8 /* OrderSettings.swift */; };
 		911F548827C6A2BC005D4876 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911F548727C6A2BC005D4876 /* AppConfig.swift */; };
 		912196BE27C6868100407648 /* Realm.plist in Resources */ = {isa = PBXBuildFile; fileRef = 912196BD27C6868100407648 /* Realm.plist */; };
 		913D464B2770E46800ABE7D3 /* realmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913D464A2770E46800ABE7D3 /* realmApp.swift */; };
@@ -38,7 +37,6 @@
 		463C5367291044F2008F63E8 /* order_employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = order_employee.swift; sourceTree = "<group>"; };
 		463C536929104507008F63E8 /* order_orderDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = order_orderDetails.swift; sourceTree = "<group>"; };
 		463C536B2910453B008F63E8 /* order_orderDetails_product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = order_orderDetails_product.swift; sourceTree = "<group>"; };
-		463C536D291186DE008F63E8 /* OrderSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSettings.swift; sourceTree = "<group>"; };
 		911F548727C6A2BC005D4876 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		912196BD27C6868100407648 /* Realm.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Realm.plist; sourceTree = "<group>"; };
 		913D46472770E46800ABE7D3 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,7 +98,6 @@
 				463C5367291044F2008F63E8 /* order_employee.swift */,
 				463C536929104507008F63E8 /* order_orderDetails.swift */,
 				463C536B2910453B008F63E8 /* order_orderDetails_product.swift */,
-				463C536D291186DE008F63E8 /* OrderSettings.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -217,7 +214,6 @@
 				917097E227A05F5A00F1D65B /* ItemRow.swift in Sources */,
 				463C536A29104507008F63E8 /* order_orderDetails.swift in Sources */,
 				917097DC27A05EBC00F1D65B /* LogoutButton.swift in Sources */,
-				463C536E291186DE008F63E8 /* OrderSettings.swift in Sources */,
 				913D464D2770E46800ABE7D3 /* ContentView.swift in Sources */,
 				91DF3EEA27AAE18F0020D937 /* ErrorView.swift in Sources */,
 				463C5368291044F2008F63E8 /* order_employee.swift in Sources */,
@@ -356,7 +352,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"App/Preview Content\"";
-				DEVELOPMENT_TEAM = T7AQ7795G8;
+				DEVELOPMENT_TEAM = 4K8S736645;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -369,7 +365,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mongodb.realm.App;
+				PRODUCT_BUNDLE_IDENTIFIER = mongodb.realm.reinvent.App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -385,7 +381,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"App/Preview Content\"";
-				DEVELOPMENT_TEAM = T7AQ7795G8;
+				DEVELOPMENT_TEAM = 4K8S736645;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -398,7 +394,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = mongodb.realm.App;
+				PRODUCT_BUNDLE_IDENTIFIER = mongodb.realm.reinvent.App;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

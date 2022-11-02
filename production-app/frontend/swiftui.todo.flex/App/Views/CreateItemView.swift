@@ -6,7 +6,10 @@ import RealmSwift
 struct CreateItemView: View {
     // The ``items`` ObservedResults collection is the
     // entire list of Item objects in the realm.
-    @ObservedResults(order.self) var items
+    @ObservedResults(
+        order.self,
+        sortDescriptor: {SortDescriptor(keyPath: "_id", ascending: false)}()
+    ) var items
     
     // Create a new Realm Item object.
     @State private var newItem = order()
@@ -19,16 +22,51 @@ struct CreateItemView: View {
     @State var user: User
     
     @State var customerId = ""
+    @State var employeeId = 0
+    @State var freight = 0
+    @State var orderDate = Date()
+    @State var shipAddress = ""
+    @State var shipCity = ""
+    @State var shipCountry = ""
+    @State var shipPostalCode = ""
+    @State var shipRegion = ""
+    @State var shipVia = 0
 
     var body: some View {
+        
+        let lastOrderId = items.first!._id
+            
         Form {
             Section(header: Text("Customer ID")) {
-                // When using Atlas Device Sync, binding directly to the
-                // synced property can cause performance issues. Instead,
-                // we'll bind to a `@State` variable and then assign to the
-                // synced property when the user presses `Save`
+                // Accessing the observed item object lets us update the live object
+                // No need to explicitly update the object in a write transaction
                 TextField("Customer ID", text: $customerId)
             }
+            Section(header: Text("Employee ID")) {
+                TextField("Employee ID", value: $employeeId, format: .number )
+            }
+            Section(header: Text("Shipping Address")) {
+                TextField("Shipping Address", text: $shipAddress)
+            }
+            Section(header: Text("Freight")) {
+                TextField("Freight", value: $freight, format: .number)
+            }
+            Section(header: Text("Order Date")) {
+                TextField("Order Date", value: $orderDate, format: .dateTime)
+            }
+            Section(header: Text("City")) {
+                TextField("City", text: $shipCity)
+            }
+            Section(header: Text("Country")) {
+                TextField("Country", text: $shipCountry)
+            }
+            Section(header: Text("Postal Code")) {
+                TextField("Postal Code", text: $shipPostalCode)
+            }
+            Section(header: Text("Region")) {
+                TextField("Region", text: $shipRegion)
+            }
+            
             Section {
                 Button(action: {
 //                    newItem.owner_id = user.id
@@ -36,9 +74,11 @@ struct CreateItemView: View {
                     // performance issues, we only assign to the `newItem.summary`
                     // once when the user presses `Save`.
                     newItem.customerId = customerId
+                    newItem._id = lastOrderId
+                    newItem._id += 1
+                    print("New Order ID: \(newItem._id)")
+                    print("Number of Realm Documents: \(items.count)")
                     
-//                    newItem._id = items.sorted(byKeyPath: "orderDate", ascending: false) .last!._id
-//                    newItem._id += 1
                     // Appending the new Item object to the ``items``
                     // ObservedResults collection adds it to the
                     // realm in an implicit write.
