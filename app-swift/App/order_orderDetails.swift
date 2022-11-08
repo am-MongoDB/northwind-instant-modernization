@@ -1,7 +1,7 @@
 import Foundation
 import RealmSwift
 
-class order_orderDetails: EmbeddedObject {
+class order_orderDetails: EmbeddedObject, ObjectKeyIdentifiable {
     @Persisted var discount: Double?
 
     @Persisted var product: order_orderDetails_product?

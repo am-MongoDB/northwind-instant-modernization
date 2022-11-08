@@ -12,6 +12,9 @@
 		463C5368291044F2008F63E8 /* order_employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463C5367291044F2008F63E8 /* order_employee.swift */; };
 		463C536A29104507008F63E8 /* order_orderDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463C536929104507008F63E8 /* order_orderDetails.swift */; };
 		463C536C2910453B008F63E8 /* order_orderDetails_product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463C536B2910453B008F63E8 /* order_orderDetails_product.swift */; };
+		466674422919D5AC00549EF5 /* OrderDetailsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466674412919D5AC00549EF5 /* OrderDetailsRow.swift */; };
+		46667444291AB8AF00549EF5 /* OrderDetailsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46667443291AB8AF00549EF5 /* OrderDetailsList.swift */; };
+		46667446291AB8CB00549EF5 /* OrderDetailsDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46667445291AB8CB00549EF5 /* OrderDetailsDetails.swift */; };
 		911F548827C6A2BC005D4876 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911F548727C6A2BC005D4876 /* AppConfig.swift */; };
 		912196BE27C6868100407648 /* Realm.plist in Resources */ = {isa = PBXBuildFile; fileRef = 912196BD27C6868100407648 /* Realm.plist */; };
 		913D464B2770E46800ABE7D3 /* realmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913D464A2770E46800ABE7D3 /* realmApp.swift */; };
@@ -37,6 +40,9 @@
 		463C5367291044F2008F63E8 /* order_employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = order_employee.swift; sourceTree = "<group>"; };
 		463C536929104507008F63E8 /* order_orderDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = order_orderDetails.swift; sourceTree = "<group>"; };
 		463C536B2910453B008F63E8 /* order_orderDetails_product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = order_orderDetails_product.swift; sourceTree = "<group>"; };
+		466674412919D5AC00549EF5 /* OrderDetailsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsRow.swift; sourceTree = "<group>"; };
+		46667443291AB8AF00549EF5 /* OrderDetailsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsList.swift; sourceTree = "<group>"; };
+		46667445291AB8CB00549EF5 /* OrderDetailsDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsDetails.swift; sourceTree = "<group>"; };
 		911F548727C6A2BC005D4876 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		912196BD27C6868100407648 /* Realm.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Realm.plist; sourceTree = "<group>"; };
 		913D46472770E46800ABE7D3 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -123,6 +129,9 @@
 				917097E527A05FA000F1D65B /* ItemList.swift */,
 				917097E127A05F5A00F1D65B /* ItemRow.swift */,
 				917097E327A05F7E00F1D65B /* ItemsView.swift */,
+				466674412919D5AC00549EF5 /* OrderDetailsRow.swift */,
+				46667443291AB8AF00549EF5 /* OrderDetailsList.swift */,
+				46667445291AB8CB00549EF5 /* OrderDetailsDetails.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -206,9 +215,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				917097E427A05F7E00F1D65B /* ItemsView.swift in Sources */,
+				46667444291AB8AF00549EF5 /* OrderDetailsList.swift in Sources */,
 				917097E627A05FA000F1D65B /* ItemList.swift in Sources */,
 				463C5364291044A9008F63E8 /* order.swift in Sources */,
+				46667446291AB8CB00549EF5 /* OrderDetailsDetails.swift in Sources */,
 				463C5366291044C9008F63E8 /* order_customer.swift in Sources */,
+				466674422919D5AC00549EF5 /* OrderDetailsRow.swift in Sources */,
 				917097DE27A05F0000F1D65B /* OpenRealmView.swift in Sources */,
 				913D46622770F0C600ABE7D3 /* LoginView.swift in Sources */,
 				917097E227A05F5A00F1D65B /* ItemRow.swift in Sources */,

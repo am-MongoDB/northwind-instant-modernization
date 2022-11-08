@@ -8,11 +8,6 @@ struct ItemRow: View {
         NavigationLink(destination: ItemDetail(anOrder: item)) {
             Text(String(item._id))
             Spacer()
-//            if item.isComplete {
-//                Image(systemName: "checkmark")
-//                    .foregroundColor(.blue)
-//                    .padding(.trailing, 10)
-//            }
         }
     }
 }
