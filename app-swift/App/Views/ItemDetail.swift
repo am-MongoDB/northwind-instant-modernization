@@ -39,7 +39,7 @@ struct ItemDetail: View {
                 TextField("Postal Code", text: $anOrder.shipPostalCode)
             }
             Section(header: Text("Order Details")) {
-                VStack {OrderDetailsList(anOrder: anOrder)}
+                OrderDetailsList(order: anOrder)
             }
             
 //            Section(header: Text("Via")) {

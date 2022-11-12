@@ -8,19 +8,13 @@
 import SwiftUI
 import RealmSwift
 
-
 struct OrderDetailsList: View {
-    @ObservedRealmObject var orderDetails: order_orderDetails
+    @ObservedRealmObject var order: order
+    
     var body: some View {
-        VStack {
-            List {
-                // this is where things go off the rails for me 
-//                ForEach(orderDetailsf) { anOrderDetails in
-//                    OrderDetailsRow(orderDetails: anOrderDetails)
-//                }
-            }
-            .listStyle(InsetListStyle())
+        List(order.orderDetails) { anOrderDetails in
+            OrderDetailsRow(orderDetails: anOrderDetails)
         }
-        
+        .listStyle(InsetListStyle())
     }
 }
