@@ -13,10 +13,7 @@ struct ItemDetail: View {
                 // Accessing the observed item object lets us update the live object
                 // No need to explicitly update the object in a write transaction
                 TextField("Customer ID", text: $anOrder.customerId)
-            }
-            Section(header: Text("Employee ID")) {
-                TextField("Employee ID", value: $anOrder.employeeId, format: .number )
-            }
+            }            
             Section(header: Text("Shipping Address")) {
                 TextField("Shipping Address", text: $anOrder.shipAddress)
             }
@@ -38,17 +35,9 @@ struct ItemDetail: View {
             Section(header: Text("Postal Code")) {
                 TextField("Postal Code", text: $anOrder.shipPostalCode)
             }
-            Section(header: Text("Order Details")) {
-                OrderDetailsList(order: anOrder)
+            NavigationLink(destination: OrderDetailsDetailsView(order: anOrder)) {
+                Text("Order Details")
             }
-            
-//            Section(header: Text("Via")) {
-//                TextField("Via", value: $anOrder.shipVia, format: .number)
-//            }
-//            Section(header: Text("Shipped Date")) {
-//                TextField("Shipped Date", value: $anOrder.shippedDate, format: .dateTime)
-//            }
-
             
         }
         .navigationBarTitle("Update Order", displayMode: .inline)

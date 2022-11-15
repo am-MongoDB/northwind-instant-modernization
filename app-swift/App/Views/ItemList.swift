@@ -15,8 +15,8 @@ struct ItemList: View {
     
             VStack {
                 List {    
-                    ForEach(items) { item in
-                        ItemRow(item: item)
+                    ForEach(items) {
+                        item in ItemRow(item: item)
                     }
                     .onDelete(perform: $items.remove)
                 }

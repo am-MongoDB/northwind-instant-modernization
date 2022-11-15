@@ -15,6 +15,7 @@
 		466674422919D5AC00549EF5 /* OrderDetailsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466674412919D5AC00549EF5 /* OrderDetailsRow.swift */; };
 		46667444291AB8AF00549EF5 /* OrderDetailsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46667443291AB8AF00549EF5 /* OrderDetailsList.swift */; };
 		46667446291AB8CB00549EF5 /* OrderDetailsDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46667445291AB8CB00549EF5 /* OrderDetailsDetails.swift */; };
+		46E7BA6529234EC9002B855A /* OrderDetailsDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E7BA6429234EC9002B855A /* OrderDetailsDetailsView.swift */; };
 		911F548827C6A2BC005D4876 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 911F548727C6A2BC005D4876 /* AppConfig.swift */; };
 		912196BE27C6868100407648 /* Realm.plist in Resources */ = {isa = PBXBuildFile; fileRef = 912196BD27C6868100407648 /* Realm.plist */; };
 		913D464B2770E46800ABE7D3 /* realmApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913D464A2770E46800ABE7D3 /* realmApp.swift */; };
@@ -43,6 +44,7 @@
 		466674412919D5AC00549EF5 /* OrderDetailsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsRow.swift; sourceTree = "<group>"; };
 		46667443291AB8AF00549EF5 /* OrderDetailsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsList.swift; sourceTree = "<group>"; };
 		46667445291AB8CB00549EF5 /* OrderDetailsDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsDetails.swift; sourceTree = "<group>"; };
+		46E7BA6429234EC9002B855A /* OrderDetailsDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsDetailsView.swift; sourceTree = "<group>"; };
 		911F548727C6A2BC005D4876 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		912196BD27C6868100407648 /* Realm.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Realm.plist; sourceTree = "<group>"; };
 		913D46472770E46800ABE7D3 /* App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = App.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,6 +134,7 @@
 				466674412919D5AC00549EF5 /* OrderDetailsRow.swift */,
 				46667443291AB8AF00549EF5 /* OrderDetailsList.swift */,
 				46667445291AB8CB00549EF5 /* OrderDetailsDetails.swift */,
+				46E7BA6429234EC9002B855A /* OrderDetailsDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				917097E027A05F3E00F1D65B /* ItemDetail.swift in Sources */,
 				911F548827C6A2BC005D4876 /* AppConfig.swift in Sources */,
 				913D464B2770E46800ABE7D3 /* realmApp.swift in Sources */,
+				46E7BA6529234EC9002B855A /* OrderDetailsDetailsView.swift in Sources */,
 				463C536C2910453B008F63E8 /* order_orderDetails_product.swift in Sources */,
 				913D46602770E94500ABE7D3 /* CreateItemView.swift in Sources */,
 			);

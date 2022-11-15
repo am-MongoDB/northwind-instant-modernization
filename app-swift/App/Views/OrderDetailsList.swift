@@ -9,12 +9,15 @@ import SwiftUI
 import RealmSwift
 
 struct OrderDetailsList: View {
-    @ObservedRealmObject var order: order
-    
+    @ObservedRealmObject var order: order    
     var body: some View {
-        List(order.orderDetails) { anOrderDetails in
-            OrderDetailsRow(orderDetails: anOrderDetails)
+        VStack {
+            List {
+                ForEach(order.orderDetails) {
+                    orderDetails in OrderDetailsRow(orderDetails: orderDetails)
+                }
+            }.listStyle(InsetListStyle())
+            Spacer()
         }
-        .listStyle(InsetListStyle())
     }
 }

@@ -13,6 +13,8 @@ struct CreateItemView: View {
     
     // Create a new Realm Item object.
     @State private var newItem = order()
+    @State private var newOrderDetails = order_orderDetails()
+    
     
     // We've passed in the ``creatingNewItem`` variable
     // from the ItemsView to know when the user is done
@@ -31,20 +33,20 @@ struct CreateItemView: View {
     @State var shipPostalCode = ""
     @State var shipRegion = ""
     @State var shipVia = 0
+    @State var productId = 0
+    @State var quantity = 0
+    @State var unitPrice = 0.00
 
     var body: some View {
         
         let lastOrderId = items.first!._id
             
         Form {
-            Section(header: Text("Customer ID")) {
-                // Accessing the observed item object lets us update the live object
-                // No need to explicitly update the object in a write transaction
-                TextField("Customer ID", text: $customerId)
-            }
-            Section(header: Text("Employee ID")) {
-                TextField("Employee ID", value: $employeeId, format: .number )
-            }
+//            Section(header: Text("Customer ID")) {
+//                // Accessing the observed item object lets us update the live object
+//                // No need to explicitly update the object in a write transaction
+//                TextField("Customer ID", text: $customerId)
+//            }
             Section(header: Text("Shipping Address")) {
                 TextField("Shipping Address", text: $shipAddress)
             }
@@ -63,8 +65,15 @@ struct CreateItemView: View {
             Section(header: Text("Postal Code")) {
                 TextField("Postal Code", text: $shipPostalCode)
             }
-            Section(header: Text("Region")) {
-                TextField("Region", text: $shipRegion)
+            // Order Details
+            Section(header: Text("Product ID")) {
+                TextField("Product ID", value: $productId, format: .number)
+            }
+            Section(header: Text("Quantity")) {
+                TextField("Quantity", value: $quantity, format: .number)
+            }
+            Section(header: Text("Unit Price")) {
+                TextField("Unit Price", value: $unitPrice, format: .number)
             }
             
             Section {
@@ -73,6 +82,8 @@ struct CreateItemView: View {
                     // To avoid updating too many times and causing Sync-related
                     // performance issues, we only assign to the `newItem.summary`
                     // once when the user presses `Save`.
+                    newItem.orderDetails = List()
+                    newItem.orderDetails.append(newOrderDetails)
                     newItem._id = lastOrderId
                     newItem._id += 1
                     newItem.customerId = customerId
@@ -85,6 +96,9 @@ struct CreateItemView: View {
                     newItem.shipPostalCode = shipPostalCode
                     newItem.shipRegion = shipRegion
                     newItem.shipVia = shipVia
+                    newOrderDetails.unitPrice = unitPrice
+                    newOrderDetails.productId = productId
+                    newOrderDetails.quantity = quantity
                     
                     // Appending the new Item object to the ``items``
                     // ObservedResults collection adds it to the
