@@ -14,7 +14,7 @@ struct ContentView: View {
                     return
                 } else {
                     subs.append(QuerySubscription<order>(name: "user_tasks") {
-                        ($0._id >= 11049) || ($0._id <= 99999)
+                        $0._id != 0
                     })
                 }
             })
