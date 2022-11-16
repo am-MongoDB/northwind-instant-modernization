@@ -39,7 +39,7 @@ struct CreateItemView: View {
 
     var body: some View {
         
-        let lastOrderId = items.first!._id
+        let lastOrderId = items.first?._id ?? 10000
             
         Form {
 //            Section(header: Text("Customer ID")) {
