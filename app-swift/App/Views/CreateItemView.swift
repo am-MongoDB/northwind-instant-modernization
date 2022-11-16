@@ -34,7 +34,7 @@ struct CreateItemView: View {
 
     var body: some View {
         
-        let lastOrderId = items.first!._id
+        let lastOrderId = items.first?._id ?? 10000
             
         Form {
             Section(header: Text("Customer ID")) {
@@ -73,8 +73,7 @@ struct CreateItemView: View {
                     // To avoid updating too many times and causing Sync-related
                     // performance issues, we only assign to the `newItem.summary`
                     // once when the user presses `Save`.
-                    newItem._id = lastOrderId
-                    newItem._id += 1
+                    newItem._id = lastOrderId + 1
                     newItem.customerId = customerId
                     newItem.employeeId = employeeId
                     newItem.freight = freight
